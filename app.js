@@ -4,6 +4,7 @@ require("dotenv").config();
 const app = express();
 
 const uri = process.env.MONGODB_CONNECTION_URI;
+const port = process.env.MONGODB_CONNECTION_PORT;
 
 const connect = async () => {
   try {
@@ -16,6 +17,6 @@ const connect = async () => {
 
 connect();
 
-app.listen(8000, () => {
+app.listen(port || 8001, () => {
   console.log("server started on port 8000");
 });
