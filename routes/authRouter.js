@@ -19,7 +19,7 @@ const saltRounds = 15;
 authRouter.post("/signup", isNotLoggedIn, validationLogin, (req, res, next) => {
   const { username, email, password, city } = req.body;
 
-  User.findOne({ email })
+  User.findOne({ email, username })
     .then((user) => {
       //  - check if the `email` exists, if it does send a response with an error
       if (user) {

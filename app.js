@@ -7,7 +7,7 @@ const cookieParser = require("cookie-parser");
 const path = require("path");
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
-const authRouter = require('./routes/authRouter');
+const authRouter = require("./routes/authRouter");
 
 //* SETUPS
 require("dotenv").config();
