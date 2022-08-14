@@ -8,7 +8,7 @@ const path = require("path");
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
 const authRouter = require("./routes/authRouter");
-
+var cors = require("cors");
 //* SETUPS
 require("dotenv").config();
 const app = express();
@@ -56,6 +56,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
+app.use(cors({origin: true, credentials: true}));
 
 // ROUTER MIDDLEWARE
 app.use("/auth", authRouter);
