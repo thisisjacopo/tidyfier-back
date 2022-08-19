@@ -12,7 +12,7 @@ exports.isNotLoggedIn = (req, res, next) => {
   else next(createError(403));
 };
 
-// * CHECK IF USER THE BODY OF THE REQ HAS USERNAME, PASSWORD, EMAIL AND CITY
+// * CHECK IF USER THE BODY OF THE REQ HAS USERNAME, PASSWORD AND EMAIL
 exports.validationLogin = (req, res, next) => {
   const { password, email } = req.body;
   if (!password || !email) next(createError(400));

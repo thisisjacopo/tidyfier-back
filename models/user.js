@@ -9,7 +9,6 @@ const userSchema = new Schema(
     username: { type: String, required: true },
     email: { type: String, required: true },
     password: { type: String, required: true },
-    city: { type: String, required: true },
     imgPath: { type: String, required: false },
     isCleaner: { type: Boolean, default: false },
     fee: { type: Number, default: null },
